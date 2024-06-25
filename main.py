@@ -6,7 +6,7 @@ class Alphabet:
     def __init__(self) -> None:
         self.dic_alpha: Dict[str, str] = {"ب": "ب", "پ": "پ", "ت": "ت", "م": "م"}
 
-    def get_keys(self) -> list[str]:
+    def get_alphabet_keys(self) -> list[str]:
         return list(self.dic_alpha.values())
     
     def get_alpha_key(self, entry: "WordEntry") -> str:
@@ -34,15 +34,18 @@ class WordEntry:
 
 def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
     context: Dict[str, list] = dict()
-    for i in alphabet.get_keys():
+    for i in alphabet.get_alphabet_keys():
         context[i] = []
 
     for j in df.itertuples():
         word_entry = WordEntry(word=j.word, translation=j.translation)
 
-        if word_entry.get_key() in alphabet.dic_alpha.keys():
-            alpha_key = alphabet.get_alpha_key(word_entry)
-            context[alpha_key].append(word_entry)
+        def put_entry_in_context():
+            if word_entry.get_key() in alphabet.dic_alpha.keys():
+                alpha_key = alphabet.get_alpha_key(word_entry)
+                context[alpha_key].append(word_entry)
+        
+        put_entry_in_context()
 
     return context
 
