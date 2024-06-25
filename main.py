@@ -15,8 +15,13 @@ class WordEntry:
     def get_key(self):
         return self.__translation[0]
 
-    def get_context(self):
+    def __get_context(self):
         return [self.__translation, self.__word]
+    
+    def __eq__(self, value: object) -> bool:
+        if isinstance(value, list):
+            return value == self.__get_context()
+        return False
 
 
 def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
@@ -30,7 +35,7 @@ def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
         if word_entry.get_key() in dic_alpha.keys():
             alpha_key = dic_alpha[word_entry.get_key()]
 
-            context[alpha_key].append(word_entry.get_context())
+            context[alpha_key].append(word_entry)
 
     return context
 
