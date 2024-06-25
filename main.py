@@ -17,11 +17,14 @@ def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
         
         def get_key():
             return fa[0]
+        
+        def get_jj():
+            return [fa, eng]
 
         if get_key() in dic_alpha.keys():
             alpha_key = dic_alpha[get_key()]
 
-            context[alpha_key].append([fa, eng])
+            context[alpha_key].append(get_jj())
 
     return context
 
