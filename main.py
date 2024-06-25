@@ -4,14 +4,14 @@ import pandas as pd
 
 class WordEntry:
     def __init__(self, word: str, translation: str):
-        self.__word = word
-        self.__translation = translation
+        self.word = word
+        self.translation = translation
 
     def get_key(self):
-        return self.__translation[0]
+        return self.translation[0]
 
     def __get_context(self):
-        return [self.__translation, self.__word]
+        return [self.translation, self.word]
 
     def __eq__(self, value: object) -> bool:
         if isinstance(value, list):
@@ -49,3 +49,16 @@ class Alphabet:
 
 
 dic_entries = Alphabet().df_to_context(df=pd.read_csv("template.csv"))
+
+
+def to_latex(context: "Dict[str, list[WordEntry]]") -> str:
+    str_cat = ""
+    for key, entries in context.items():
+        str_item = ""
+        str_item += f"\\dicalphabet{{{key}}}\n"
+        for entry in entries:
+            str_item += f"\\dic{{{entry.word}}}{{{entry.translation}}}\n"
+        str_cat += f"{str_item}\n"
+    return str_cat
+
+latex_out = to_latex(dic_entries)
