@@ -6,7 +6,7 @@ class ContextTest(unittest.TestCase):
     def setUp(self):
         from custom_io import JSON_IO
 
-        self.io = JSON_IO("./")
+        self.io = JSON_IO("expected_outputs/")
 
     def file_name_test_default(self) -> str:
         return "context.json"
@@ -23,7 +23,7 @@ class ToLatexTest(unittest.TestCase):
     def setUp(self):
         from custom_io import JSON_IO
 
-        self.io = JSON_IO("./")
+        self.io = JSON_IO("expected_outputs/")
 
     def file_name_test_default(self) -> str:
         return "to_latex.json"
