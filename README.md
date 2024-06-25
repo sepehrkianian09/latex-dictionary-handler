@@ -1,1 +1,1 @@
-# Latex-Dictionary-Handler
+# Latex_Dictionary_Handler
