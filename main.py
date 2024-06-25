@@ -77,8 +77,10 @@ class LatexFormattingVisitor:
         return str_item
 
     def to_latex(self, context: "Dict[str, list[WordEntry]]") -> str:
+        def get_context_item_key(context_item):
+            return collator.getSortKey(context_item[0])
         return "\n".join(
-            [self.alphakey_to_latex(key, entries) for key, entries in sorted(context.items(), key=collator.getSortKey)]
+            [self.alphakey_to_latex(key, entries) for key, entries in sorted(context.items(), key=get_context_item_key)]
         )
 
 
