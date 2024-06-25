@@ -2,7 +2,7 @@ from typing import Dict
 import unittest
 
 
-class MainTest(unittest.TestCase):
+class ContextTest(unittest.TestCase):
     def setUp(self):
         from custom_io import JSON_IO
 
