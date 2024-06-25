@@ -61,9 +61,9 @@ def alphakey_to_latex(alpha_key: str, entries: "list[WordEntry]") -> str:
 
 
 def to_latex(context: "Dict[str, list[WordEntry]]") -> str:
-    str_cat = ""
-    for key, entries in context.items():
-        str_cat += f"{alphakey_to_latex(key, entries)}\n"
-    return str_cat
+    return "\n".join(
+        [alphakey_to_latex(key, entries) for key, entries in context.items()]
+    )
+
 
 latex_out = to_latex(dic_entries)
