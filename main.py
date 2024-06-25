@@ -18,14 +18,19 @@ class WordEntry:
         if isinstance(value, list):
             return value == self.__get_context()
         return False
+    
+    def __repr__(self) -> str:
+        return f"{self.word}||{self.translation}"
 
 
 class Alphabet:
     def __init__(self) -> None:
-        self.dic_alpha: Dict[str, str] = {"ب": "ب", "پ": "پ", "ت": "ت", "م": "م"}
+        pass
 
     def get_alpha_key(self, entry: "WordEntry") -> str:
-        return self.dic_alpha[entry.get_key()]
+        if entry.get_key() in ["ا", "آ"]:
+            return "الف"
+        return entry.get_key()
 
     def put_entry_in_context(self, context: Dict[str, list], entry: "WordEntry"):
         alpha_key = self.get_alpha_key(entry)
@@ -39,17 +44,13 @@ class Alphabet:
 
         for j in df.itertuples():
             entry = WordEntry(word=j.word, translation=j.translation)
-            if entry.get_key() in self.dic_alpha.keys():
 
-                self.put_entry_in_context(
-                    context=context,
-                    entry=entry,
-                )
+            self.put_entry_in_context(
+                context=context,
+                entry=entry,
+            )
 
         return context
-
-
-dic_entries = Alphabet().df_to_context(df=pd.read_csv("template.csv"))
 
 
 class LatexFormattingVisitor:
@@ -63,11 +64,14 @@ class LatexFormattingVisitor:
             str_item += f"\\dic{{{entry.word}}}{{{entry.translation}}}\n"
         return str_item
 
-
     def to_latex(self, context: "Dict[str, list[WordEntry]]") -> str:
         return "\n".join(
             [self.alphakey_to_latex(key, entries) for key, entries in context.items()]
         )
 
 
+def context_total_len(context: "Dict[str, list[WordEntry]]") -> int:
+    return sum([len(entries) for entries in context.values()])
+
+dic_entries = Alphabet().df_to_context(df=pd.read_csv("template.csv"))
 latex_out = LatexFormattingVisitor().to_latex(dic_entries)
