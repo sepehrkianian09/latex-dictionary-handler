@@ -5,9 +5,6 @@ import pandas as pd
 class Alphabet:
     def __init__(self) -> None:
         self.dic_alpha: Dict[str, str] = {"ب": "ب", "پ": "پ", "ت": "ت", "م": "م"}
-
-    def get_alphabet_keys(self) -> list[str]:
-        return list(self.dic_alpha.values())
     
     def get_alpha_key(self, entry: "WordEntry") -> str:
         return self.dic_alpha[entry.get_key()]
