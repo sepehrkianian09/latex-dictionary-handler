@@ -19,5 +19,21 @@ class ContextTest(unittest.TestCase):
         self.assertDictEqual(dic_entries, expected_dic_entries)
 
 
+class ToLatexTest(unittest.TestCase):
+    def setUp(self):
+        from custom_io import JSON_IO
+
+        self.io = JSON_IO("./")
+
+    def file_name_test_default(self) -> str:
+        return "to_latex.json"
+
+    def test_default(self):
+        from main import latex_out
+
+        # self.io.write(latex_out, self.file_name_test_default())
+        expected_latex_out = self.io.read(self.file_name_test_default())
+        self.assertEqual(latex_out, expected_latex_out)
+
 if __name__ == "__main__":
     unittest.main()
