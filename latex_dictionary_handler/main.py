@@ -2,7 +2,7 @@ from ast import List
 from typing import Dict
 import pandas as pd
 
-from custom_io import JSONCustomSerializable
+from latex_dictionary_handler.custom_io import JSONCustomSerializable
 
 
 import icu

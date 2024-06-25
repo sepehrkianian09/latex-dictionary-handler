@@ -4,7 +4,7 @@ import unittest
 
 class ContextTest(unittest.TestCase):
     def setUp(self):
-        from custom_io import JSON_IO
+        from latex_dictionary_handler.custom_io import JSON_IO
 
         self.io = JSON_IO("expected_outputs/")
 
@@ -12,7 +12,7 @@ class ContextTest(unittest.TestCase):
         return "context.json"
 
     def test_default(self):
-        from main import dic_entries
+        from latex_dictionary_handler.main import dic_entries
 
         # self.io.write(dic_entries, self.file_name_test_default())
         expected_dic_entries = self.io.read(self.file_name_test_default())
@@ -21,7 +21,7 @@ class ContextTest(unittest.TestCase):
 
 class ToLatexTest(unittest.TestCase):
     def setUp(self):
-        from custom_io import JSON_IO
+        from latex_dictionary_handler.custom_io import JSON_IO
 
         self.io = JSON_IO("expected_outputs/")
 
@@ -29,7 +29,7 @@ class ToLatexTest(unittest.TestCase):
         return "to_latex.json"
 
     def test_default(self):
-        from main import latex_out
+        from latex_dictionary_handler.main import latex_out
 
         # self.io.write(latex_out, self.file_name_test_default())
         expected_latex_out = self.io.read(self.file_name_test_default())
