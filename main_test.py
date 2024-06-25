@@ -9,13 +9,13 @@ class ContextTest(unittest.TestCase):
         self.io = JSON_IO("./")
 
     def file_name_test_default(self) -> str:
-        return "convert.json"
+        return "context.json"
 
     def test_default(self):
         from main import dic_entries
 
-        expected_dic_entries = self.io.read(self.file_name_test_default())
         # self.io.write(dic_entries, self.file_name_test_default())
+        expected_dic_entries = self.io.read(self.file_name_test_default())
         self.assertDictEqual(dic_entries, expected_dic_entries)
 
 
