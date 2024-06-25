@@ -37,15 +37,13 @@ def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
     for i in alphabet.get_alphabet_keys():
         context[i] = []
 
-    for j in df.itertuples():
-        word_entry = WordEntry(word=j.word, translation=j.translation)
+    def put_entry_in_context(entry: "WordEntry"):
+        if entry.get_key() in alphabet.dic_alpha.keys():
+            alpha_key = alphabet.get_alpha_key(entry)
+            context[alpha_key].append(entry)
 
-        def put_entry_in_context():
-            if word_entry.get_key() in alphabet.dic_alpha.keys():
-                alpha_key = alphabet.get_alpha_key(word_entry)
-                context[alpha_key].append(word_entry)
-        
-        put_entry_in_context()
+    for j in df.itertuples():
+        put_entry_in_context(entry=WordEntry(word=j.word, translation=j.translation))
 
     return context
 
