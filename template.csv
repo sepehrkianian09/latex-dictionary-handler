@@ -1,0 +1,161 @@
+word,translation
+Evaluation,ارزیابی
+Testing,آزمون
+Setup,زیربنا
+Large Language Models (LLM),مدل‌های بزرگ زبانی
+Metric,معیار
+Random Access Memory (RAM),حافظه‌ی دسترسی تصادفی
+Epoch,دور
+Parameter,فراسنج
+Decoder,رمزگشا
+Encoder,رمزگذار
+Context,فحوا
+Context,زمینه
+Code Quality Metrics,معیارهای کیفیت کد
+Source Code,کد منبع
+Markdown,مارکداون
+code cell,سلول کد
+Jupyter Notebook,دفترچه‌ی ژوپیتر
+Notebook,دفترچه
+Computational Notebook,دفترچه محاسباتی
+Script,متن
+ID,شناسه
+Cognitive,شناختی
+program comprehension,درک برنامه
+Overfit,بیش‌برازش
+Recurrent Neural Network (RNN),"شبکه‌های عصبی بازگشتی، 
+شبکه‌های عصبی تکرارشونده"
+Convolutional Neural Network (CNN),شبکه‌های عصبی کانولوشنی
+Long Short-Term Memory (LSTM),حافظه‌‌ی طولانی کوتاه مدت
+Gated Recurrent Unit (GRU),واحد تکرارشونده دروازه‌دار
+Graph Convolutional Network,شبکه‌ی پیچشی گراف
+10-Fold Cross Validation,اعتبارسنجی متقابل ده برابری
+Deep-Learning,یادگیری عمیق
+Natural Language Processing,پردازش زبان طبیعی
+Traditional,مرسوم
+Wilcoxon signed-rank test,آزمون ویلکاکسون رتبه علامت دار
+embedding,ماتریس انتصاب
+temprature,دما
+Feedforward Neural Network,شبکه عصبی پیشخور
+Prompt,فرمان
+Practice,رویه‌های کاری
+pre-trained,پیش آموزش دیده
+Prototyping,نمونه‌اولیه‌گیری
+Few-Shot Learning,یادگیری با تعداد کم نمونه‌ها
+One-Shot Learning,یادگیری با یک نمونه
+Zero-Shot Learning,یادگیری بدون نمونه
+cell,سلول
+API,واسط برنامه نویسی نرم افزار
+feature,ویژگی
+contextualization,فحوا
+padding,پر کننده
+load,بارگذاری
+loader,بارگذار
+concat,ادغام
+shot,نمونه‌
+shot sampler,تولید کننده‌ی نمونه
+Information Retrieval,بازیابی اطلاعات
+random,تصادفی
+training,آموزشی
+query,پرس و جو، پرسمان
+cosine similarity,تشابه کسینوسی
+template,قالب
+Abstract Syntax Tree (AST),درخت نحوی انتزاعی
+Data-flow Graph,گراف جریان داده
+augmentation,ادغام
+filtering,گزینش
+halstead,هالستد
+utility,تسهیلات
+evaluator,ارزیابی کننده
+token,علامت
+tokenizer,علامت ساز
+summarizer,خلاصه کننده
+checkpoint,نقطه ذخیره
+sequence,دنباله
+seq2seq,توالی به توالی
+graph2seq,گراف به توالی
+code2seq,کد به توالی
+thought vector,بردار اندیشه
+attention,توجه
+visitor design pattern,الگوی طراحی بازدیدکننده
+user manual,راهنمای کاربری
+prompt engineering,مهندسی فرمان
+refactoring,بازآرایی
+unit test,آزمون واحد
+end-to-end test,آزمون پایان به پایان
+assertion,تصدیق
+p value,مقدار احتمال
+interface,واسط
+Transformer,مبدل
+False Negative,منفی کاذب
+In-context Learning,یادگیری درون‌متنی
+loss,زیان
+collate,تجمیع
+facade,نما
+concrete,عینی
+Maintainability,قابلیت نگهداری
+Codebase,پایگاه کد
+develop,ایجاد
+developer,ایجادکننده
+artifact,مصنوع
+executable,اجرا‌پذیر
+deadline,ضرب‌العجل
+polymorphism,چند ریختی
+paradigm,پاردایم
+version control,کنترل نسخه
+package,بسته
+code repository,مخزن کد
+organization,سازمان
+static,ایستا
+Natural Language Generation (NLG),تولید زبان طبیعی
+Software Word Usage Model (SWUM),مدل‌ استفاده از کلمات نرم‌افزاری
+Page Ranking,رتبه بندی صفحه
+Neural Machine Translation (NMT),ترجمه ماشینی عصبی
+bag-of-paths,کیسه‌ای از مسیرها
+program analysis,تحلیل برنامه
+function signature,امضای تابع
+Code Language Models (Code-LMs),مدل‌های زبانی کد
+code summarization,خلاصه‌ی کد
+adapter,آداپتور
+extend,توسعه
+decompile,بازگشایی
+binary code,کد باینری
+narrative structure,ساختار روایتی
+workflow,روند کاری
+hierarchical attention,توجه سلسله‌مراتبی
+graph neural network,شبکه عصبی گرافی
+pipeline,خط لوله
+fine-tune,تعدیل
+AI For SE,هوش‌مصنوعی برای مهندسی نرم‌افزار
+SE For AI ,مهندسی نرم‌افزار برای هوش‌مصنوعی
+Reinforcement Learning,یادگیری تقویتی
+Cyclomatic Complexity,پیچیدگی سایکلومتیک
+Intelligence Sofware Engineering Lab,آزمایشگاه مهندسی نرم‌افزار هوشمند
+Code Smell,نشانه‌های بد کد
+Graphical Processing Unit (GPU),نماپردازنده
+optimizer,بهینه‌ساز
+workspace,فضای کار
+batch,دسته
+Machine Translation,ترجمه‌ی ماشینی
+Text Summarization,خلاصه‌سازی متن
+Dialogue Systems,سیستم‌های محاوره‌ای
+Speech Recognition,بازشناسی گفتار
+Image Captioning,شرح‌گذاری تصویر
+Client,کارخواه
+derivation,اشتقاق
+Coupling,اتصالات
+Cohesion,انسجام
+delegation,واسپاری
+inheritance,وراثت
+Information Expert,متخصص اطلاعات
+encapsulation,پوشیده‌سازی
+Protected variations,تغییرات محافظت شده
+decorator,تزیین کننده
+Computer Vision,بینایی کامپیوتر
+Rectified Linear Unit (ReLU),واحد خطی اصلاح‌شده
+Module,پیمانه
+Early Stopping,توقف زودهنگام
+Disk,لوح
+code comment,توضیح کد
+reranking,بازچینش
+multi-intent comment,توضیح کد با غرایض مختلف
