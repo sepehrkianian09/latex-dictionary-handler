@@ -5,6 +5,10 @@ import pandas as pd
 from custom_io import JSONCustomSerializable
 
 
+import icu
+collator = icu.Collator.createInstance(icu.Locale('fa_IR'))
+
+
 class WordEntry(JSONCustomSerializable):
     def __init__(self, word: str, translation: str):
         self.word = word
@@ -25,7 +29,7 @@ class WordEntry(JSONCustomSerializable):
         return False
     
     def sorting_key(self):
-        return self.translation.replace("آ", "ا")
+        return collator.getSortKey(self.translation.replace("آ", "ا"))
     
     def __repr__(self) -> str:
         return f"{self.word}||{self.translation}"
@@ -74,7 +78,7 @@ class LatexFormattingVisitor:
 
     def to_latex(self, context: "Dict[str, list[WordEntry]]") -> str:
         return "\n".join(
-            [self.alphakey_to_latex(key, entries) for key, entries in sorted(context.items())]
+            [self.alphakey_to_latex(key, entries) for key, entries in sorted(context.items(), key=collator.getSortKey)]
         )
 
 
