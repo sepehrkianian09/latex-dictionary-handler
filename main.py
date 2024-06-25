@@ -34,12 +34,13 @@ class WordEntry:
 
 def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
     context: Dict[str, list] = dict()
-    for i in alphabet.get_alphabet_keys():
-        context[i] = []
 
     def put_entry_in_context(entry: "WordEntry"):
         if entry.get_key() in alphabet.dic_alpha.keys():
             alpha_key = alphabet.get_alpha_key(entry)
+
+            if not context.__contains__(alpha_key):
+                context[alpha_key] = []
             context[alpha_key].append(entry)
 
     for j in df.itertuples():
