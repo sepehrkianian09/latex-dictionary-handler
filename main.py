@@ -5,18 +5,23 @@ dic_alpha: Dict[str, str] = {"ب": "ب", "پ": "پ", "ت": "ت", "م": "م"}
 
 
 alpha: list[str] = list(dic_alpha.values())
-dic_entries: Dict[str, list] = dict()
-for i in alpha:
-    dic_entries[i] = []
 
 
-jj = pd.read_csv("template.csv")
+def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
+    context: Dict[str, list] = dict()
+    for i in alpha:
+        context[i] = []
 
-for j in jj.itertuples():
-    eng = j.word
-    fa = j.translation
-    key = fa[0]
-    if key in dic_alpha.keys():
-        alpha_key = dic_alpha[key]
+    for j in df.itertuples():
+        eng: str = j.word
+        fa: str = j.translation
+        key = fa[0]
+        if key in dic_alpha.keys():
+            alpha_key = dic_alpha[key]
 
-        dic_entries[alpha_key].append([fa, eng])
+            context[alpha_key].append([fa, eng])
+
+    return context
+
+
+dic_entries = df_to_context(df=pd.read_csv("template.csv"))
