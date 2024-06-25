@@ -14,14 +14,14 @@ Context,زمینه
 Code Quality Metrics,معیارهای کیفیت کد
 Source Code,کد منبع
 Markdown,مارکداون
-code cell,سلول کد
+Code Cell,سلول کد
 Jupyter Notebook,دفترچه‌ی ژوپیتر
 Notebook,دفترچه
 Computational Notebook,دفترچه محاسباتی
 Script,متن
 ID,شناسه
 Cognitive,شناختی
-program comprehension,درک برنامه
+Program Comprehension,درک برنامه
 Overfit,بیش‌برازش
 Recurrent Neural Network (RNN),"شبکه‌های عصبی بازگشتی، 
 شبکه‌های عصبی تکرارشونده"
@@ -33,129 +33,131 @@ Graph Convolutional Network,شبکه‌ی پیچشی گراف
 Deep-Learning,یادگیری عمیق
 Natural Language Processing,پردازش زبان طبیعی
 Traditional,مرسوم
-Wilcoxon signed-rank test,آزمون ویلکاکسون رتبه علامت دار
-embedding,ماتریس انتصاب
-temprature,دما
+Wilcoxon Signed-Rank Test,آزمون ویلکاکسون رتبه علامت دار
+Embedding,ماتریس انتصاب
+Temperature,دما
 Feedforward Neural Network,شبکه عصبی پیشخور
 Prompt,فرمان
 Practice,رویه‌های کاری
-pre-trained,پیش آموزش دیده
+Pre-Trained,پیش آموزش دیده
 Prototyping,نمونه‌اولیه‌گیری
 Few-Shot Learning,یادگیری با تعداد کم نمونه‌ها
 One-Shot Learning,یادگیری با یک نمونه
 Zero-Shot Learning,یادگیری بدون نمونه
-cell,سلول
+Cell,سلول
 API,واسط برنامه نویسی نرم افزار
-feature,ویژگی
-contextualization,فحوا
-padding,پر کننده
-load,بارگذاری
-loader,بارگذار
-concat,ادغام
-shot,نمونه‌
-shot sampler,تولید کننده‌ی نمونه
+Feature,ویژگی
+Contextualization,فحوا
+Padding,پر کننده
+Load,بارگذاری
+Loader,بارگذار
+Concat,ادغام
+Shot,نمونه‌
+Shot Sampler,تولید کننده‌ی نمونه
 Information Retrieval,بازیابی اطلاعات
-random,تصادفی
-training,آموزشی
-query,پرس و جو، پرسمان
-cosine similarity,تشابه کسینوسی
-template,قالب
+Random,تصادفی
+Training,آموزشی
+Query,پرس و جو، پرسمان
+Cosine Similarity,تشابه کسینوسی
+Template,قالب
 Abstract Syntax Tree (AST),درخت نحوی انتزاعی
-Data-flow Graph,گراف جریان داده
-augmentation,ادغام
-filtering,گزینش
-halstead,هالستد
-utility,تسهیلات
-evaluator,ارزیابی کننده
-token,علامت
-tokenizer,علامت ساز
-summarizer,خلاصه کننده
-checkpoint,نقطه ذخیره
-sequence,دنباله
-seq2seq,توالی به توالی
-graph2seq,گراف به توالی
-code2seq,کد به توالی
-thought vector,بردار اندیشه
-attention,توجه
-visitor design pattern,الگوی طراحی بازدیدکننده
-user manual,راهنمای کاربری
-prompt engineering,مهندسی فرمان
-refactoring,بازآرایی
-unit test,آزمون واحد
-end-to-end test,آزمون پایان به پایان
-assertion,تصدیق
-p value,مقدار احتمال
-interface,واسط
+Data-Flow Graph (DFG),گراف جریان داده
+Augmentation,ادغام
+Filtering,گزینش
+Halstead,هالستد
+Utility,تسهیلات
+Evaluator,ارزیابی کننده
+Token,علامت
+Tokenizer,علامت ساز
+Summarizer,خلاصه کننده
+Checkpoint,نقطه ذخیره
+Sequence,دنباله
+Seq2Seq,توالی به توالی
+Graph2Seq,گراف به توالی
+Code2Seq,کد به توالی
+Thought Vector,بردار اندیشه
+Attention,توجه
+Visitor Design Pattern,الگوی طراحی بازدیدکننده
+User Manual,راهنمای کاربری
+Prompt Engineering,مهندسی فرمان
+Refactoring,بازآرایی
+Unit Test,آزمون واحد
+End-To-End Test,آزمون پایان به پایان
+Assertion,تصدیق
+P Value,مقدار احتمال
+Interface,واسط
 Transformer,مبدل
 False Negative,منفی کاذب
-In-context Learning,یادگیری درون‌متنی
-loss,زیان
-collate,تجمیع
-facade,نما
-concrete,عینی
+In-Context Learning,یادگیری درون‌متنی
+Loss,زیان
+Collate,تجمیع
+Facade,نما
+Concrete,عینی
 Maintainability,قابلیت نگهداری
 Codebase,پایگاه کد
-develop,ایجاد
-developer,ایجادکننده
-artifact,مصنوع
-executable,اجرا‌پذیر
-deadline,ضرب‌العجل
-polymorphism,چند ریختی
-paradigm,پاردایم
-version control,کنترل نسخه
-package,بسته
-code repository,مخزن کد
-organization,سازمان
-static,ایستا
+Develop,ایجاد
+Developer,ایجادکننده
+Artifact,مصنوع
+Executable,اجرا‌پذیر
+Deadline,ضرب‌العجل
+Polymorphism,چند ریختی
+Paradigm,پاردایم
+Version Control,کنترل نسخه
+Package,بسته
+Code Repository,مخزن کد
+Organization,سازمان
+Static,ایستا
 Natural Language Generation (NLG),تولید زبان طبیعی
 Software Word Usage Model (SWUM),مدل‌ استفاده از کلمات نرم‌افزاری
 Page Ranking,رتبه بندی صفحه
 Neural Machine Translation (NMT),ترجمه ماشینی عصبی
-bag-of-paths,کیسه‌ای از مسیرها
-program analysis,تحلیل برنامه
-function signature,امضای تابع
+Bag-Of-Paths,کیسه‌ای از مسیرها
+Program Analysis,تحلیل برنامه
+Function Signature,امضای تابع
 Code Language Models (Code-LMs),مدل‌های زبانی کد
-code summarization,خلاصه‌ی کد
-adapter,آداپتور
-extend,توسعه
-decompile,بازگشایی
-binary code,کد باینری
-narrative structure,ساختار روایتی
-workflow,روند کاری
-hierarchical attention,توجه سلسله‌مراتبی
-graph neural network,شبکه عصبی گرافی
-pipeline,خط لوله
-fine-tune,تعدیل
+Code Summarization,خلاصه‌ی کد
+Adapter,آداپتور
+Extend,توسعه
+Decompile,بازگشایی
+Binary Code,کد باینری
+Narrative Structure,ساختار روایتی
+Workflow,روند کاری
+Hierarchical Attention,توجه سلسله‌مراتبی
+Graph Neural Network,شبکه عصبی گرافی
+Pipeline,خط لوله
+Fine-Tune,تعدیل
 AI For SE,هوش‌مصنوعی برای مهندسی نرم‌افزار
-SE For AI ,مهندسی نرم‌افزار برای هوش‌مصنوعی
+SE For AI,مهندسی نرم‌افزار برای هوش‌مصنوعی
 Reinforcement Learning,یادگیری تقویتی
 Cyclomatic Complexity,پیچیدگی سایکلومتیک
 Intelligence Sofware Engineering Lab,آزمایشگاه مهندسی نرم‌افزار هوشمند
 Code Smell,نشانه‌های بد کد
 Graphical Processing Unit (GPU),نماپردازنده
-optimizer,بهینه‌ساز
-workspace,فضای کار
-batch,دسته
+Optimizer,بهینه‌ساز
+Workspace,فضای کار
+Batch,دسته
 Machine Translation,ترجمه‌ی ماشینی
 Text Summarization,خلاصه‌سازی متن
 Dialogue Systems,سیستم‌های محاوره‌ای
 Speech Recognition,بازشناسی گفتار
 Image Captioning,شرح‌گذاری تصویر
 Client,کارخواه
-derivation,اشتقاق
+Derivation,اشتقاق
 Coupling,اتصالات
 Cohesion,انسجام
-delegation,واسپاری
-inheritance,وراثت
+Delegation,واسپاری
+Inheritance,وراثت
 Information Expert,متخصص اطلاعات
-encapsulation,پوشیده‌سازی
-Protected variations,تغییرات محافظت شده
-decorator,تزیین کننده
+Encapsulation,پوشیده‌سازی
+Protected Variations,تغییرات محافظت شده
+Decorator,تزیین کننده
 Computer Vision,بینایی کامپیوتر
 Rectified Linear Unit (ReLU),واحد خطی اصلاح‌شده
 Module,پیمانه
 Early Stopping,توقف زودهنگام
 Disk,لوح
-code comment,توضیح کد
-reranking,بازچینش
-multi-intent comment,توضیح کد با غرایض مختلف
+Code Comment,توضیح کد
+Reranking,بازچینش
+Multi-Intent Comment,توضیح کد با غرایض مختلف
+,
+Confusion Matrix,ماتریس درهم‌ریختگی
