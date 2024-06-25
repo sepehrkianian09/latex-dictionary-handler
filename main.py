@@ -27,21 +27,23 @@ class Alphabet:
         return self.dic_alpha[entry.get_key()]
 
     def put_entry_in_context(self, context: Dict[str, list], entry: "WordEntry"):
-        if entry.get_key() in self.dic_alpha.keys():
-            alpha_key = self.get_alpha_key(entry)
+        alpha_key = self.get_alpha_key(entry)
 
-            if not context.__contains__(alpha_key):
-                context[alpha_key] = []
-            context[alpha_key].append(entry)
+        if not context.__contains__(alpha_key):
+            context[alpha_key] = []
+        context[alpha_key].append(entry)
 
     def df_to_context(self, df: "pd.DataFrame") -> "Dict[str, list]":
         context: Dict[str, list] = dict()
 
         for j in df.itertuples():
-            self.put_entry_in_context(
-                context=context,
-                entry=WordEntry(word=j.word, translation=j.translation),
-            )
+            entry = WordEntry(word=j.word, translation=j.translation)
+            if entry.get_key() in self.dic_alpha.keys():
+
+                self.put_entry_in_context(
+                    context=context,
+                    entry=entry,
+                )
 
         return context
 
