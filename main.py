@@ -2,14 +2,6 @@ from typing import Dict
 import pandas as pd
 
 
-class Alphabet:
-    def __init__(self) -> None:
-        self.dic_alpha: Dict[str, str] = {"ب": "ب", "پ": "پ", "ت": "ت", "م": "م"}
-
-    def get_alpha_key(self, entry: "WordEntry") -> str:
-        return self.dic_alpha[entry.get_key()]
-
-
 class WordEntry:
     def __init__(self, word: str, translation: str):
         self.__word = word
@@ -27,26 +19,31 @@ class WordEntry:
         return False
 
 
-def put_entry_in_context(alphabet, context: Dict[str, list], entry: "WordEntry"):
-    if entry.get_key() in alphabet.dic_alpha.keys():
-        alpha_key = alphabet.get_alpha_key(entry)
+class Alphabet:
+    def __init__(self) -> None:
+        self.dic_alpha: Dict[str, str] = {"ب": "ب", "پ": "پ", "ت": "ت", "م": "م"}
 
-        if not context.__contains__(alpha_key):
-            context[alpha_key] = []
-        context[alpha_key].append(entry)
+    def get_alpha_key(self, entry: "WordEntry") -> str:
+        return self.dic_alpha[entry.get_key()]
+
+    def put_entry_in_context(self, context: Dict[str, list], entry: "WordEntry"):
+        if entry.get_key() in self.dic_alpha.keys():
+            alpha_key = self.get_alpha_key(entry)
+
+            if not context.__contains__(alpha_key):
+                context[alpha_key] = []
+            context[alpha_key].append(entry)
+
+    def df_to_context(self, df: "pd.DataFrame") -> "Dict[str, list]":
+        context: Dict[str, list] = dict()
+
+        for j in df.itertuples():
+            self.put_entry_in_context(
+                context=context,
+                entry=WordEntry(word=j.word, translation=j.translation),
+            )
+
+        return context
 
 
-def df_to_context(alphabet: "Alphabet", df: "pd.DataFrame") -> "Dict[str, list]":
-    context: Dict[str, list] = dict()
-
-    for j in df.itertuples():
-        put_entry_in_context(
-            alphabet=alphabet,
-            context=context,
-            entry=WordEntry(word=j.word, translation=j.translation),
-        )
-
-    return context
-
-
-dic_entries = df_to_context(alphabet=Alphabet(), df=pd.read_csv("template.csv"))
+dic_entries = Alphabet().df_to_context(df=pd.read_csv("template.csv"))
