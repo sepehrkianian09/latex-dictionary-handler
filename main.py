@@ -52,18 +52,22 @@ class Alphabet:
 dic_entries = Alphabet().df_to_context(df=pd.read_csv("template.csv"))
 
 
-def alphakey_to_latex(alpha_key: str, entries: "list[WordEntry]") -> str:
-    str_item = ""
-    str_item += f"\\dicalphabet{{{alpha_key}}}\n"
-    for entry in entries:
-        str_item += f"\\dic{{{entry.word}}}{{{entry.translation}}}\n"
-    return str_item
+class LatexFormattingVisitor:
+    def __init__(self) -> None:
+        pass
+
+    def alphakey_to_latex(self, alpha_key: str, entries: "list[WordEntry]") -> str:
+        str_item = ""
+        str_item += f"\\dicalphabet{{{alpha_key}}}\n"
+        for entry in entries:
+            str_item += f"\\dic{{{entry.word}}}{{{entry.translation}}}\n"
+        return str_item
 
 
-def to_latex(context: "Dict[str, list[WordEntry]]") -> str:
-    return "\n".join(
-        [alphakey_to_latex(key, entries) for key, entries in context.items()]
-    )
+    def to_latex(self, context: "Dict[str, list[WordEntry]]") -> str:
+        return "\n".join(
+            [self.alphakey_to_latex(key, entries) for key, entries in context.items()]
+        )
 
 
-latex_out = to_latex(dic_entries)
+latex_out = LatexFormattingVisitor().to_latex(dic_entries)
