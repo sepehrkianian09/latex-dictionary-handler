@@ -17,6 +17,16 @@ class Custom_IO(Generic[IO_DATA_TYPE], metaclass=ABCMeta):
 
 import json
 
+class JSONCustomSerializable(metaclass=ABCMeta):
+    @abstractmethod
+    def to_dict(self):
+        pass
+
+class JSONCustomEncoder(json.JSONEncoder):
+    def default(self, obj: object):
+        if isinstance(obj, JSONCustomSerializable):
+            return obj.to_dict()
+        return super(JSONCustomEncoder, self).default(obj)
 
 class JSON_IO(Custom_IO):
     # This class has these features:
@@ -30,7 +40,7 @@ class JSON_IO(Custom_IO):
 
     def write(self, data: object, file_name: str) -> None:
         with open(self.__get_file_path(file_name), "w") as f:
-            json.dump(data, f)
+            json.dump(data, f, cls=JSONCustomEncoder)
 
     def read(self, file_name: str) -> Optional[object]:
         with open(self.__get_file_path(file_name)) as f:

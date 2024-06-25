@@ -35,5 +35,6 @@ class ToLatexTest(unittest.TestCase):
         expected_latex_out = self.io.read(self.file_name_test_default())
         self.assertEqual(latex_out, expected_latex_out)
 
+
 if __name__ == "__main__":
     unittest.main()

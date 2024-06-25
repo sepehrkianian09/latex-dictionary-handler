@@ -2,8 +2,10 @@ from ast import List
 from typing import Dict
 import pandas as pd
 
+from custom_io import JSONCustomSerializable
 
-class WordEntry:
+
+class WordEntry(JSONCustomSerializable):
     def __init__(self, word: str, translation: str):
         self.word = word
         self.translation = translation
@@ -11,12 +13,15 @@ class WordEntry:
     def get_key(self):
         return self.translation[0]
 
-    def __get_context(self):
-        return [self.translation, self.word]
+    def to_dict(self):
+        return {
+            'word': self.word,
+            'translation': self.translation
+        }
 
     def __eq__(self, value: object) -> bool:
-        if isinstance(value, list):
-            return value == self.__get_context()
+        if isinstance(value, dict):
+            return value == self.to_dict()
         return False
     
     def __repr__(self) -> str:
