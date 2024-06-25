@@ -24,6 +24,9 @@ class WordEntry(JSONCustomSerializable):
             return value == self.to_dict()
         return False
     
+    def sorting_key(self):
+        return self.translation.replace("آ", "ا")
+    
     def __repr__(self) -> str:
         return f"{self.word}||{self.translation}"
 
@@ -65,13 +68,13 @@ class LatexFormattingVisitor:
     def alphakey_to_latex(self, alpha_key: str, entries: "list[WordEntry]") -> str:
         str_item = ""
         str_item += f"\\dicalphabet{{{alpha_key}}}\n"
-        for entry in entries:
+        for entry in sorted(entries, key=WordEntry.sorting_key):
             str_item += f"\\dic{{{entry.word}}}{{{entry.translation}}}\n"
         return str_item
 
     def to_latex(self, context: "Dict[str, list[WordEntry]]") -> str:
         return "\n".join(
-            [self.alphakey_to_latex(key, entries) for key, entries in context.items()]
+            [self.alphakey_to_latex(key, entries) for key, entries in sorted(context.items())]
         )
 
 
