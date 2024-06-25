@@ -6,7 +6,6 @@ dic_alpha: Dict[str, str] = {"ب": "ب", "پ": "پ", "ت": "ت", "م": "م"}
 
 alpha: list[str] = list(dic_alpha.values())
 
-
 def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
     context: Dict[str, list] = dict()
     for i in alpha:
@@ -15,9 +14,12 @@ def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
     for j in df.itertuples():
         eng: str = j.word
         fa: str = j.translation
-        key = fa[0]
-        if key in dic_alpha.keys():
-            alpha_key = dic_alpha[key]
+        
+        def get_key():
+            return fa[0]
+
+        if get_key() in dic_alpha.keys():
+            alpha_key = dic_alpha[get_key()]
 
             context[alpha_key].append([fa, eng])
 
