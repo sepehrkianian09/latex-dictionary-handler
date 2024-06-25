@@ -1,3 +1,4 @@
+from ast import List
 from typing import Dict
 import pandas as pd
 
@@ -51,14 +52,18 @@ class Alphabet:
 dic_entries = Alphabet().df_to_context(df=pd.read_csv("template.csv"))
 
 
+def alphakey_to_latex(alpha_key: str, entries: "list[WordEntry]") -> str:
+    str_item = ""
+    str_item += f"\\dicalphabet{{{alpha_key}}}\n"
+    for entry in entries:
+        str_item += f"\\dic{{{entry.word}}}{{{entry.translation}}}\n"
+    return str_item
+
+
 def to_latex(context: "Dict[str, list[WordEntry]]") -> str:
     str_cat = ""
     for key, entries in context.items():
-        str_item = ""
-        str_item += f"\\dicalphabet{{{key}}}\n"
-        for entry in entries:
-            str_item += f"\\dic{{{entry.word}}}{{{entry.translation}}}\n"
-        str_cat += f"{str_item}\n"
+        str_cat += f"{alphakey_to_latex(key, entries)}\n"
     return str_cat
 
 latex_out = to_latex(dic_entries)
