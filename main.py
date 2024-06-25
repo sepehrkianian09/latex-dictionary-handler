@@ -80,3 +80,6 @@ def context_total_len(context: "Dict[str, list[WordEntry]]") -> int:
 
 dic_entries = Alphabet().df_to_context(df=pd.read_csv("template.csv"))
 latex_out = LatexFormattingVisitor().to_latex(dic_entries)
+
+with open("latex.out", "w", encoding="utf-8") as f:
+    f.write(latex_out)
