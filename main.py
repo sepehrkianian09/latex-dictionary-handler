@@ -10,9 +10,6 @@ class Alphabet:
         return self.dic_alpha[entry.get_key()]
 
 
-alphabet = Alphabet()
-
-
 class WordEntry:
     def __init__(self, word: str, translation: str):
         self.__word = word
@@ -30,7 +27,7 @@ class WordEntry:
         return False
 
 
-def put_entry_in_context(context: Dict[str, list], entry: "WordEntry"):
+def put_entry_in_context(alphabet, context: Dict[str, list], entry: "WordEntry"):
     if entry.get_key() in alphabet.dic_alpha.keys():
         alpha_key = alphabet.get_alpha_key(entry)
 
@@ -39,15 +36,17 @@ def put_entry_in_context(context: Dict[str, list], entry: "WordEntry"):
         context[alpha_key].append(entry)
 
 
-def df_to_context(df: "pd.DataFrame") -> "Dict[str, list]":
+def df_to_context(alphabet: "Alphabet", df: "pd.DataFrame") -> "Dict[str, list]":
     context: Dict[str, list] = dict()
 
     for j in df.itertuples():
         put_entry_in_context(
-            context=context, entry=WordEntry(word=j.word, translation=j.translation)
+            alphabet=alphabet,
+            context=context,
+            entry=WordEntry(word=j.word, translation=j.translation),
         )
 
     return context
 
 
-dic_entries = df_to_context(df=pd.read_csv("template.csv"))
+dic_entries = df_to_context(alphabet=Alphabet(), df=pd.read_csv("template.csv"))
