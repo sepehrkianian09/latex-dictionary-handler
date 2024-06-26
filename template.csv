@@ -6,7 +6,7 @@ Large Language Models (LLM),مدل‌های بزرگ زبانی
 Metric,معیار
 Random Access Memory (RAM),حافظه‌ی دسترسی تصادفی
 Epoch,دور
-Parameter,فراسنج
+Hyperparameter,فراسنج
 Decoder,رمزگشا
 Encoder,رمزگذار
 Context,فحوا
@@ -23,9 +23,8 @@ ID,شناسه
 Cognitive,شناختی
 Program Comprehension,درک برنامه
 Overfit,بیش‌برازش
-Recurrent Neural Network (RNN),"شبکه‌های عصبی بازگشتی، 
-شبکه‌های عصبی تکرارشونده"
-Convolutional Neural Network (CNN),شبکه‌های عصبی کانولوشنی
+Recurrent Neural Network (RNN),شبکه‌های عصبی تکرارشونده
+Convolutional Neural Network (CNN),شبکه‌های عصبی پیچشی
 Long Short-Term Memory (LSTM),حافظه‌‌ی طولانی کوتاه مدت
 Gated Recurrent Unit (GRU),واحد تکرارشونده دروازه‌دار
 Graph Convolutional Network,شبکه‌ی پیچشی گراف
@@ -45,7 +44,7 @@ Few-Shot Learning,یادگیری با تعداد کم نمونه‌ها
 One-Shot Learning,یادگیری با یک نمونه
 Zero-Shot Learning,یادگیری بدون نمونه
 Cell,سلول
-API,واسط برنامه نویسی نرم افزار
+API,واسط برنامه نویسی نرم‌افزار
 Feature,ویژگی
 Contextualization,فحوا
 Padding,پر کننده
@@ -61,7 +60,7 @@ Query,پرس و جو، پرسمان
 Cosine Similarity,تشابه کسینوسی
 Template,قالب
 Abstract Syntax Tree (AST),درخت نحوی انتزاعی
-Data-Flow Graph (DFG),گراف جریان داده
+Data Flow Graph (DFG),گراف جریان داده
 Augmentation,ادغام
 Filtering,گزینش
 Halstead,هالستد
@@ -159,5 +158,4 @@ Disk,لوح
 Code Comment,توضیح کد
 Reranking,بازچینش
 Multi-Intent Comment,توضیح کد با غرایض مختلف
-,
 Confusion Matrix,ماتریس درهم‌ریختگی
